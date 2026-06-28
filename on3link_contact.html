@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Start Your Project — On3 Link LLC</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#0a0f1e;--navy2:#0d1428;--navy3:#111a35;
+  --gold:#b8922a;--gold2:#d4a843;--gold3:#e8c06a;
+  --white:#ffffff;--gray1:#f0f0ed;--gray2:#c8c6bc;--gray3:#8a8880;
+  --text:#e8e6e0;--success:#1d9e75;--success-bg:rgba(29,158,117,0.1);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--navy);color:var(--text);line-height:1.6;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,15,30,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(184,146,42,0.15);padding:0 5%}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px;max-width:1400px;margin:0 auto}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo svg{height:40px;width:auto}
+.logo-text{font-size:15px;font-weight:700;color:var(--white);letter-spacing:0.5px;line-height:1.2}
+.logo-text span{display:block;font-size:10px;font-weight:400;color:var(--gold2);letter-spacing:2px;text-transform:uppercase}
+.nav-links{display:flex;align-items:center;gap:8px}
+.nav-links a{color:var(--gray2);text-decoration:none;font-size:13px;font-weight:500;padding:6px 12px;border-radius:6px;transition:color 0.2s,background 0.2s}
+.nav-links a:hover,.nav-links a.active{color:var(--white);background:rgba(255,255,255,0.06)}
+.nav-cta{background:var(--gold)!important;color:var(--navy)!important;font-weight:600!important;padding:8px 18px!important;border-radius:6px!important}
+.nav-cta:hover{background:var(--gold2)!important}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
+.hamburger span{display:block;width:22px;height:2px;background:var(--white);border-radius:2px}
+.nav-mobile{display:none;position:fixed;top:72px;left:0;right:0;background:rgba(10,15,30,0.98);padding:24px 5%;flex-direction:column;gap:8px;z-index:99;border-bottom:1px solid rgba(184,146,42,0.15)}
+.nav-mobile.open{display:flex}
+.nav-mobile a{color:var(--gray2);text-decoration:none;font-size:15px;font-weight:500;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.05)}
+
+/* PAGE HERO */
+.page-hero{padding:140px 5% 80px;background:var(--navy2);position:relative;overflow:hidden;border-bottom:1px solid rgba(184,146,42,0.1)}
+.page-hero-grid{position:absolute;inset:0;opacity:0.03;background-image:linear-gradient(rgba(184,146,42,0.8) 1px,transparent 1px),linear-gradient(90deg,rgba(184,146,42,0.8) 1px,transparent 1px);background-size:60px 60px}
+.page-hero-glow{position:absolute;top:0;left:30%;width:500px;height:300px;background:radial-gradient(ellipse,rgba(184,146,42,0.07) 0%,transparent 70%);pointer-events:none}
+.page-hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.breadcrumb{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--gray3);margin-bottom:24px;letter-spacing:1px;text-transform:uppercase}
+.breadcrumb a{color:var(--gold);text-decoration:none}
+.page-hero h1{font-size:clamp(32px,4.5vw,58px);font-weight:800;color:var(--white);line-height:1.1;letter-spacing:-1.5px;margin-bottom:20px}
+.page-hero h1 em{font-style:normal;color:var(--gold2)}
+.page-hero p{font-size:17px;color:var(--gray2);line-height:1.75}
+.hero-promise{display:flex;flex-direction:column;gap:14px;margin-top:32px}
+.promise-item{display:flex;align-items:center;gap:12px;font-size:14px;color:var(--gray2)}
+.promise-check{width:22px;height:22px;border-radius:50%;background:rgba(184,146,42,0.15);border:1px solid rgba(184,146,42,0.3);display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0;color:var(--gold2)}
+.hero-contact-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:20px}
+.hero-contact-card h3{font-size:14px;font-weight:700;color:var(--gold2);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:4px}
+.contact-method{display:flex;align-items:flex-start;gap:14px;padding:16px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:10px;text-decoration:none;transition:border-color 0.2s,background 0.2s}
+.contact-method:hover{border-color:rgba(184,146,42,0.3);background:rgba(184,146,42,0.05)}
+.cm-icon{font-size:22px;flex-shrink:0;margin-top:1px}
+.cm-label{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold2);margin-bottom:3px}
+.cm-value{font-size:14px;color:var(--gray1);font-weight:500}
+.cm-sub{font-size:12px;color:var(--gray3);margin-top:2px}
+
+/* STEP INDICATOR */
+.step-bar{background:rgba(184,146,42,0.05);border-bottom:1px solid rgba(184,146,42,0.1);padding:0 5%}
+.step-bar-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;padding:20px 0}
+.step{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:600;color:var(--gray3);transition:color 0.3s}
+.step.active{color:var(--gold2)}
+.step.done{color:var(--success)}
+.step-num{width:28px;height:28px;border-radius:50%;border:1px solid currentColor;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0}
+.step.done .step-num{background:var(--success);border-color:var(--success);color:var(--white)}
+.step-divider{flex:1;height:1px;background:rgba(255,255,255,0.08);margin:0 16px}
+
+/* MAIN LAYOUT */
+.contact-main{padding:80px 5%;max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr 380px;gap:60px;align-items:start}
+
+/* FORM */
+.form-card{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.07);border-radius:20px;padding:48px;position:relative}
+.form-section{margin-bottom:48px}
+.form-section:last-of-type{margin-bottom:0}
+.form-section-title{font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold2);margin-bottom:24px;padding-bottom:12px;border-bottom:1px solid rgba(184,146,42,0.15);display:flex;align-items:center;gap:10px}
+.form-section-title span{width:24px;height:24px;border-radius:50%;background:rgba(184,146,42,0.15);border:1px solid rgba(184,146,42,0.3);display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--gold2)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.form-field{display:flex;flex-direction:column;gap:7px}
+.form-field.full{grid-column:1/-1}
+.form-field label{font-size:12px;font-weight:600;letter-spacing:0.8px;text-transform:uppercase;color:var(--gray2)}
+.form-field label .req{color:var(--gold);margin-left:2px}
+.form-field input,.form-field select,.form-field textarea{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:12px 16px;color:var(--white);font-size:14px;font-family:'Inter',sans-serif;outline:none;transition:border-color 0.2s,background 0.2s;width:100%}
+.form-field input:focus,.form-field select:focus,.form-field textarea:focus{border-color:rgba(184,146,42,0.5);background:rgba(184,146,42,0.04)}
+.form-field input::placeholder,.form-field textarea::placeholder{color:var(--gray3)}
+.form-field select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238a8880' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
+.form-field select option{background:#0d1428;color:var(--white)}
+.form-field textarea{resize:vertical;min-height:110px;line-height:1.6}
+.char-count{font-size:11px;color:var(--gray3);text-align:right;margin-top:4px}
+
+/* RADIO GROUP */
+.radio-group{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.radio-option{display:flex;align-items:center;gap:10px;padding:12px 14px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:8px;cursor:pointer;transition:all 0.2s;font-size:13px;color:var(--gray2)}
+.radio-option:hover{border-color:rgba(184,146,42,0.25);color:var(--white)}
+.radio-option input{accent-color:var(--gold2);width:15px;height:15px;flex-shrink:0}
+.radio-option.selected{border-color:rgba(184,146,42,0.4);background:rgba(184,146,42,0.07);color:var(--white)}
+
+/* SUBMIT */
+.form-submit{margin-top:36px;padding-top:32px;border-top:1px solid rgba(255,255,255,0.06)}
+.submit-note{font-size:12px;color:var(--gray3);margin-top:14px;text-align:center;line-height:1.6}
+.btn-submit{width:100%;background:var(--gold);color:var(--navy);font-weight:700;font-size:16px;padding:16px 32px;border-radius:10px;border:none;cursor:pointer;transition:background 0.2s,transform 0.15s;display:flex;align-items:center;justify-content:center;gap:10px;font-family:'Inter',sans-serif}
+.btn-submit:hover{background:var(--gold2);transform:translateY(-1px)}
+.btn-submit:active{transform:translateY(0)}
+
+/* SUCCESS STATE */
+.success-state{display:none;text-align:center;padding:60px 32px}
+.success-icon{font-size:64px;margin-bottom:24px}
+.success-state h2{font-size:28px;font-weight:800;color:var(--white);margin-bottom:12px}
+.success-state p{font-size:16px;color:var(--gray2);line-height:1.7;max-width:400px;margin:0 auto 32px}
+.success-steps{display:flex;flex-direction:column;gap:12px;text-align:left;background:rgba(29,158,117,0.07);border:1px solid rgba(29,158,117,0.2);border-radius:12px;padding:24px;margin-bottom:32px}
+.success-steps h4{font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--success);margin-bottom:12px}
+.ss-item{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--gray2)}
+.ss-dot{width:8px;height:8px;border-radius:50%;background:var(--success);flex-shrink:0}
+
+/* SIDEBAR */
+.contact-sidebar{display:flex;flex-direction:column;gap:20px;position:sticky;top:100px}
+.sidebar-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:28px}
+.sidebar-card.gold{background:rgba(184,146,42,0.07);border-color:rgba(184,146,42,0.2)}
+.sidebar-card h3{font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold2);margin-bottom:16px}
+.sidebar-card p{font-size:13px;color:var(--gray2);line-height:1.7}
+.contact-detail{display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.05)}
+.contact-detail:last-child{border-bottom:none;padding-bottom:0}
+.cd-icon{font-size:18px;flex-shrink:0;margin-top:1px}
+.cd-label{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--gold2);margin-bottom:3px}
+.cd-value{font-size:13px;color:var(--gray1)}
+.cd-value a{color:var(--gray1);text-decoration:none;transition:color 0.2s}
+.cd-value a:hover{color:var(--gold2)}
+.process-mini{display:flex;flex-direction:column;gap:0}
+.pm-step{display:flex;align-items:flex-start;gap:12px;padding:12px 0;position:relative}
+.pm-step:not(:last-child)::after{content:'';position:absolute;left:11px;top:36px;width:1px;height:calc(100% - 12px);background:rgba(184,146,42,0.2)}
+.pm-dot{width:24px;height:24px;border-radius:50%;background:rgba(184,146,42,0.12);border:1px solid rgba(184,146,42,0.3);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:var(--gold2);flex-shrink:0;margin-top:1px}
+.pm-step h4{font-size:13px;font-weight:600;color:var(--white);margin-bottom:2px}
+.pm-step p{font-size:12px;color:var(--gray3);line-height:1.5}
+.guarantee-list{display:flex;flex-direction:column;gap:10px;margin-top:4px}
+.guarantee-item{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--gray2);line-height:1.5}
+.guarantee-item::before{content:'✓';color:var(--gold2);font-weight:700;flex-shrink:0}
+
+/* FAQ MINI */
+.faq-mini{display:flex;flex-direction:column;gap:0}
+.faq-mini-item{border-bottom:1px solid rgba(255,255,255,0.05);padding:14px 0}
+.faq-mini-item:last-child{border-bottom:none;padding-bottom:0}
+.faq-mini-q{font-size:13px;font-weight:600;color:var(--white);margin-bottom:6px}
+.faq-mini-a{font-size:12px;color:var(--gray3);line-height:1.6}
+
+/* FOOTER */
+footer{background:#060b16;border-top:1px solid rgba(255,255,255,0.06);padding:48px 5% 28px;margin-top:80px}
+.footer-inner{max-width:1400px;margin:0 auto}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.footer-brand p{font-size:13px;color:var(--gray3);line-height:1.7;margin-top:14px;max-width:280px}
+.footer-col h4{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold2);margin-bottom:14px}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.footer-col li a{font-size:13px;color:var(--gray3);text-decoration:none;transition:color 0.2s}
+.footer-col li a:hover{color:var(--white)}
+.footer-contact{border-top:1px solid rgba(255,255,255,0.05);padding-top:28px;margin-bottom:24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
+.footer-contact-item{display:flex;align-items:flex-start;gap:10px}
+.footer-contact-item span{color:var(--gold2);font-size:15px;margin-top:2px}
+.footer-contact-item div p:first-child{font-size:11px;font-weight:700;color:var(--gold2);letter-spacing:1px;text-transform:uppercase;margin-bottom:3px}
+.footer-contact-item div a,.footer-contact-item div p{font-size:13px;color:var(--gray3);text-decoration:none}
+.footer-contact-item div a:hover{color:var(--white)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.05);padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.footer-bottom p{font-size:12px;color:var(--gray3)}
+
+@media(max-width:1100px){
+  .contact-main{grid-template-columns:1fr;gap:40px}
+  .contact-sidebar{position:static}
+}
+@media(max-width:900px){
+  .nav-links{display:none}.hamburger{display:flex}
+  .page-hero-inner{grid-template-columns:1fr}
+  .hero-contact-card{display:none}
+  .form-grid{grid-template-columns:1fr}
+  .form-field.full{grid-column:1}
+  .radio-group{grid-template-columns:1fr}
+  .step-bar-inner{gap:0}
+  .step span:not(.step-num){display:none}
+  .footer-top{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .form-card{padding:28px 20px}
+  .footer-top{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-label="On3 Link logo">
+        <ellipse cx="100" cy="72" rx="40" ry="55" fill="none" stroke="#b8922a" stroke-width="14"/>
+        <ellipse cx="100" cy="130" rx="40" ry="55" fill="none" stroke="#8a6a1a" stroke-width="14"/>
+        <rect x="86" y="45" width="18" height="110" fill="#0a0f1e"/>
+        <text x="100" y="118" text-anchor="middle" font-family="Inter,sans-serif" font-weight="800" font-size="36" fill="#b8922a">1</text>
+      </svg>
+      <div class="logo-text">ON3 LINK<span>LLC</span></div>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="countries.html">Countries</a>
+      <a href="tradeshows.html">Trade Shows</a>
+      <a href="industries.html">Industries</a>
+      <a href="contact.html" class="nav-cta active">Start Your Project</a>
+    </div>
+    <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<div class="nav-mobile" id="mobileMenu">
+  <a href="index.html" onclick="closeMenu()">Home</a>
+  <a href="about.html" onclick="closeMenu()">About</a>
+  <a href="services.html" onclick="closeMenu()">Services</a>
+  <a href="countries.html" onclick="closeMenu()">Countries</a>
+  <a href="tradeshows.html" onclick="closeMenu()">Trade Shows</a>
+  <a href="industries.html" onclick="closeMenu()">Industries</a>
+  <a href="contact.html" onclick="closeMenu()" style="color:var(--gold2);font-weight:700">Start Your Project →</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-grid"></div>
+  <div class="page-hero-glow"></div>
+  <div class="page-hero-inner">
+    <div>
+      <div class="breadcrumb"><a href="index.html">Home</a><span>›</span><span>Start Your Project</span></div>
+      <h1>Let's build something<br><em>international together.</em></h1>
+      <p>Tell us about your project. We'll review your submission within 24 hours and schedule a free consultation to discuss your sourcing goals, supply chain challenges, and how On3 Link can help.</p>
+      <div class="hero-promise">
+        <div class="promise-item"><div class="promise-check">✓</div>Free initial consultation — no obligation</div>
+        <div class="promise-item"><div class="promise-check">✓</div>Response within 24 business hours</div>
+        <div class="promise-item"><div class="promise-check">✓</div>No sales pressure — just a strategic conversation</div>
+        <div class="promise-item"><div class="promise-check">✓</div>Complete confidentiality on your project details</div>
+      </div>
+    </div>
+    <div class="hero-contact-card">
+      <h3>Reach us directly</h3>
+      <a href="tel:+17273006697" class="contact-method">
+        <div class="cm-icon">📞</div>
+        <div><div class="cm-label">Phone</div><div class="cm-value">+1 (727) 300-6697</div><div class="cm-sub">Mon–Fri, 9am–6pm EST</div></div>
+      </a>
+      <a href="mailto:hello@on3link.com" class="contact-method">
+        <div class="cm-icon">✉️</div>
+        <div><div class="cm-label">Email</div><div class="cm-value">hello@on3link.com</div><div class="cm-sub">We respond within 24 hours</div></div>
+      </a>
+      <a href="https://wa.me/17273006697" class="contact-method">
+        <div class="cm-icon">💬</div>
+        <div><div class="cm-label">WhatsApp</div><div class="cm-value">+1 (727) 300-6697</div><div class="cm-sub">Quick questions welcome</div></div>
+      </a>
+      <div class="contact-method" style="cursor:default">
+        <div class="cm-icon">📍</div>
+        <div><div class="cm-label">Office</div><div class="cm-value">Fort Myers, FL 33966</div><div class="cm-sub">12581 Metro Pkwy, Suite 9</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STEP BAR -->
+<div class="step-bar">
+  <div class="step-bar-inner">
+    <div class="step active" id="step1-indicator"><div class="step-num">1</div><span>Your Details</span></div>
+    <div class="step-divider"></div>
+    <div class="step" id="step2-indicator"><div class="step-num">2</div><span>Your Project</span></div>
+    <div class="step-divider"></div>
+    <div class="step" id="step3-indicator"><div class="step-num">3</div><span>Requirements</span></div>
+    <div class="step-divider"></div>
+    <div class="step" id="step4-indicator"><div class="step-num">4</div><span>Submit</span></div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="contact-main">
+
+  <!-- FORM -->
+  <div>
+    <div class="form-card" id="formCard">
+
+      <!-- SECTION 1: YOUR DETAILS -->
+      <div class="form-section">
+        <div class="form-section-title"><span>1</span>Your Details</div>
+        <div class="form-grid">
+          <div class="form-field">
+            <label>Full Name <span class="req">*</span></label>
+            <input type="text" id="fname" placeholder="Your full name" oninput="updateStep()">
+          </div>
+          <div class="form-field">
+            <label>Company Name <span class="req">*</span></label>
+            <input type="text" id="fcompany" placeholder="Your company name" oninput="updateStep()">
+          </div>
+          <div class="form-field">
+            <label>Email Address <span class="req">*</span></label>
+            <input type="email" id="femail" placeholder="your@email.com" oninput="updateStep()">
+          </div>
+          <div class="form-field">
+            <label>Phone Number</label>
+            <input type="tel" id="fphone" placeholder="+1 (000) 000-0000">
+          </div>
+          <div class="form-field">
+            <label>Country <span class="req">*</span></label>
+            <select id="fcountry" onchange="updateStep()">
+              <option value="">Select your country...</option>
+              <option>United States</option>
+              <option>Brazil</option>
+              <option>Mexico</option>
+              <option>Canada</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label>Industry</label>
+            <select id="findustry">
+              <option value="">Select industry...</option>
+              <option>Construction & Flooring</option>
+              <option>Beauty & Professional Barber</option>
+              <option>Consumer Products</option>
+              <option>Retail & Wholesale</option>
+              <option>Private Label Brands</option>
+              <option>Manufacturing</option>
+              <option>E-Commerce</option>
+              <option>Automotive</option>
+              <option>Home Improvement</option>
+              <option>Industrial</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 2: YOUR PROJECT -->
+      <div class="form-section">
+        <div class="form-section-title"><span>2</span>Your Project</div>
+        <div class="form-grid">
+          <div class="form-field full">
+            <label>What service are you interested in? <span class="req">*</span></label>
+            <div class="radio-group" id="serviceGroup">
+              <label class="radio-option" onclick="selectRadio(this,'service')"><input type="radio" name="service" value="International Product Sourcing">International Product Sourcing</label>
+              <label class="radio-option" onclick="selectRadio(this,'service')"><input type="radio" name="service" value="Supplier Development">Supplier Development</label>
+              <label class="radio-option" onclick="selectRadio(this,'service')"><input type="radio" name="service" value="Strategic Procurement">Strategic Procurement</label>
+              <label class="radio-option" onclick="selectRadio(this,'service')"><input type="radio" name="service" value="OEM & ODM Manufacturing">OEM & ODM Manufacturing</label>
+              <label class="radio-option" onclick="selectRadio(this,'service')"><input type="radio" name="service" value="Private Label Development">Private Label Development</label>
+              <label class="radio-option" onclick="selectRadio(this,'service')"><input type="radio" name="service" value="Import & Export Support">Import & Export Support</label>
+              <label class="radio-option" onclick="selectRadio(this,'service')"><input type="radio" name="service" value="Supply Chain Solutions">Supply Chain Solutions</label>
+              <label class="radio-option" onclick="selectRadio(this,'service')"><input type="radio" name="service" value="Trade Show Representation">Trade Show Representation</label>
+            </div>
+          </div>
+          <div class="form-field full">
+            <label>Which countries are relevant to your project?</label>
+            <div class="radio-group">
+              <label class="radio-option" onclick="toggleCheck(this)"><input type="checkbox" value="USA">🇺🇸 United States</label>
+              <label class="radio-option" onclick="toggleCheck(this)"><input type="checkbox" value="Brazil">🇧🇷 Brazil</label>
+              <label class="radio-option" onclick="toggleCheck(this)"><input type="checkbox" value="China">🇨🇳 China</label>
+              <label class="radio-option" onclick="toggleCheck(this)"><input type="checkbox" value="Mexico">🇲🇽 Mexico</label>
+            </div>
+          </div>
+          <div class="form-field full">
+            <label>Product Category</label>
+            <input type="text" id="fproduct" placeholder="e.g. Barber chairs, tile leveling clips, consumer electronics...">
+          </div>
+          <div class="form-field full">
+            <label>Project Description <span class="req">*</span></label>
+            <textarea id="fdesc" placeholder="Tell us about your project — what you're sourcing, your current situation, your goals, and any specific challenges you're facing..." oninput="countChars(this,'descCount');updateStep()"></textarea>
+            <div class="char-count" id="descCount">0 / 1000 characters</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 3: REQUIREMENTS -->
+      <div class="form-section">
+        <div class="form-section-title"><span>3</span>Requirements & Timeline</div>
+        <div class="form-grid">
+          <div class="form-field">
+            <label>Target Market</label>
+            <input type="text" id="ftarget" placeholder="Where will you sell this product?">
+          </div>
+          <div class="form-field">
+            <label>Estimated Annual Purchase Volume</label>
+            <select id="fvolume">
+              <option value="">Select range...</option>
+              <option>Under $25,000</option>
+              <option>$25,000 – $100,000</option>
+              <option>$100,000 – $500,000</option>
+              <option>$500,000 – $1,000,000</option>
+              <option>Over $1,000,000</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label>Project Timeline</label>
+            <select id="ftimeline">
+              <option value="">Select timeline...</option>
+              <option>I need help immediately (ASAP)</option>
+              <option>Within 1–3 months</option>
+              <option>Within 3–6 months</option>
+              <option>Within 6–12 months</option>
+              <option>Planning ahead (12+ months)</option>
+              <option>Just exploring options</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label>Preferred Contact Method</label>
+            <select id="fcontact">
+              <option value="">Select preference...</option>
+              <option>Email</option>
+              <option>Phone call</option>
+              <option>WhatsApp</option>
+              <option>Video call (Zoom / Google Meet)</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label>Budget Range (optional)</label>
+            <select id="fbudget">
+              <option value="">Prefer not to say</option>
+              <option>Under $10,000</option>
+              <option>$10,000 – $50,000</option>
+              <option>$50,000 – $200,000</option>
+              <option>$200,000+</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label>How did you hear about us?</label>
+            <select id="fhear">
+              <option value="">Select...</option>
+              <option>Google search</option>
+              <option>Trade show</option>
+              <option>Referral from a contact</option>
+              <option>Social media</option>
+              <option>LinkedIn</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-field full">
+            <label>Anything else you'd like us to know?</label>
+            <textarea id="fextra" placeholder="Any additional context, questions, or details that would help us prepare for our conversation..." oninput="countChars(this,'extraCount')"></textarea>
+            <div class="char-count" id="extraCount">0 / 500 characters</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SUBMIT -->
+      <div class="form-submit">
+        <button class="btn-submit" onclick="submitForm()">
+          <span id="submitText">Submit Your Project →</span>
+        </button>
+        <p class="submit-note">By submitting this form you agree that On3 Link LLC may contact you regarding your project. Your information is kept strictly confidential and never shared with third parties.</p>
+      </div>
+
+      <!-- SUCCESS STATE -->
+      <div class="success-state" id="successState">
+        <div class="success-icon">✅</div>
+        <h2>Project Submitted!</h2>
+        <p>Thank you for reaching out. We've received your project details and will be in touch within 24 business hours.</p>
+        <div class="success-steps">
+          <h4>What Happens Next</h4>
+          <div class="ss-item"><div class="ss-dot"></div>We review your project details (within 24 hours)</div>
+          <div class="ss-item"><div class="ss-dot"></div>We reach out via your preferred contact method</div>
+          <div class="ss-item"><div class="ss-dot"></div>We schedule a free 30-minute consultation</div>
+          <div class="ss-item"><div class="ss-dot"></div>We prepare a project proposal tailored to your needs</div>
+        </div>
+        <p style="font-size:14px;color:var(--gray3)">Need to reach us sooner? Call <a href="tel:+17273006697" style="color:var(--gold2);text-decoration:none">+1 (727) 300-6697</a> or email <a href="mailto:hello@on3link.com" style="color:var(--gold2);text-decoration:none">hello@on3link.com</a></p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SIDEBAR -->
+  <div class="contact-sidebar">
+
+    <div class="sidebar-card gold">
+      <h3>Contact Us Directly</h3>
+      <div class="contact-detail">
+        <div class="cd-icon">📞</div>
+        <div><div class="cd-label">Phone</div><div class="cd-value"><a href="tel:+17273006697">+1 (727) 300-6697</a></div></div>
+      </div>
+      <div class="contact-detail">
+        <div class="cd-icon">✉️</div>
+        <div><div class="cd-label">Email</div><div class="cd-value"><a href="mailto:hello@on3link.com">hello@on3link.com</a></div></div>
+      </div>
+      <div class="contact-detail">
+        <div class="cd-icon">💬</div>
+        <div><div class="cd-label">WhatsApp</div><div class="cd-value"><a href="https://wa.me/17273006697">+1 (727) 300-6697</a></div></div>
+      </div>
+      <div class="contact-detail">
+        <div class="cd-icon">📍</div>
+        <div><div class="cd-label">Office</div><div class="cd-value">12581 Metro Pkwy, Suite 9<br>Fort Myers, FL 33966, USA</div></div>
+      </div>
+    </div>
+
+    <div class="sidebar-card">
+      <h3>What Happens After You Submit</h3>
+      <div class="process-mini">
+        <div class="pm-step"><div class="pm-dot">1</div><div><h4>We review your project</h4><p>Within 24 business hours we read every submission carefully.</p></div></div>
+        <div class="pm-step"><div class="pm-dot">2</div><div><h4>We reach out</h4><p>Via your preferred contact method to schedule a call.</p></div></div>
+        <div class="pm-step"><div class="pm-dot">3</div><div><h4>Free consultation</h4><p>A 30-minute strategic conversation about your project.</p></div></div>
+        <div class="pm-step"><div class="pm-dot">4</div><div><h4>We send a proposal</h4><p>A clear plan with scope, timeline, and investment.</p></div></div>
+      </div>
+    </div>
+
+    <div class="sidebar-card">
+      <h3>Our Guarantee to You</h3>
+      <div class="guarantee-list">
+        <div class="guarantee-item">No obligation — the consultation is completely free</div>
+        <div class="guarantee-item">No sales pressure — we listen first</div>
+        <div class="guarantee-item">Full confidentiality on your project details</div>
+        <div class="guarantee-item">Honest advice — even if On3 isn't the right fit</div>
+        <div class="guarantee-item">Response within 24 business hours</div>
+      </div>
+    </div>
+
+    <div class="sidebar-card">
+      <h3>Common Questions</h3>
+      <div class="faq-mini">
+        <div class="faq-mini-item">
+          <div class="faq-mini-q">Is the consultation really free?</div>
+          <div class="faq-mini-a">Yes. Our initial consultation is always free with no obligation. We want to understand your project before either of us commits to anything.</div>
+        </div>
+        <div class="faq-mini-item">
+          <div class="faq-mini-q">How quickly will you respond?</div>
+          <div class="faq-mini-a">Within 24 business hours. For urgent matters, call or WhatsApp us directly at +1 (727) 300-6697.</div>
+        </div>
+        <div class="faq-mini-item">
+          <div class="faq-mini-q">We're just exploring — is that OK?</div>
+          <div class="faq-mini-a">Absolutely. Many of our best client relationships started with an exploratory conversation. There's no minimum commitment required to talk to us.</div>
+        </div>
+        <div class="faq-mini-item">
+          <div class="faq-mini-q">What if I'm not sure which service I need?</div>
+          <div class="faq-mini-a">That's what the consultation is for. Describe your situation and we'll tell you exactly which services apply and how we'd approach your project.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div style="display:flex;align-items:center;gap:10px">
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="height:32px;width:auto"><ellipse cx="100" cy="72" rx="40" ry="55" fill="none" stroke="#b8922a" stroke-width="14"/><ellipse cx="100" cy="130" rx="40" ry="55" fill="none" stroke="#8a6a1a" stroke-width="14"/><rect x="86" y="45" width="18" height="110" fill="#060b16"/><text x="100" y="118" text-anchor="middle" font-family="Inter,sans-serif" font-weight="800" font-size="36" fill="#b8922a">1</text></svg>
+          <div style="font-size:14px;font-weight:700;color:var(--white)">ON3 LINK <span style="font-size:10px;font-weight:400;color:var(--gold2)">LLC</span></div>
+        </div>
+        <p>Your strategic partner in international trade. Building supplier relationships, reducing risk, and creating long-term business opportunities across the USA, Brazil, China, and Mexico.</p>
+      </div>
+      <div class="footer-col"><h4>Services</h4><ul><li><a href="services.html#sourcing">International Sourcing</a></li><li><a href="services.html#supplier">Supplier Development</a></li><li><a href="services.html#oem">OEM & ODM</a></li><li><a href="services.html#privatelabel">Private Label</a></li><li><a href="services.html#supplychain">Supply Chain</a></li></ul></div>
+      <div class="footer-col"><h4>Countries</h4><ul><li><a href="countries.html#usa">United States</a></li><li><a href="countries.html#brazil">Brazil</a></li><li><a href="countries.html#china">China</a></li><li><a href="countries.html#mexico">Mexico</a></li></ul></div>
+      <div class="footer-col"><h4>Trade Shows</h4><ul><li><a href="tradeshows.html">Canton Fair</a></li><li><a href="tradeshows.html">Global Sources</a></li><li><a href="tradeshows.html">USA Trade Shows</a></li><li><a href="tradeshows.html">Factory Visits</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About On3</a></li><li><a href="industries.html">Industries</a></li><li><a href="services.html">Services</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    </div>
+    <div class="footer-contact">
+      <div class="footer-contact-item"><span>📍</span><div><p>Address</p><p>12581 Metro Pkwy, Suite 9<br>Fort Myers, FL 33966, USA</p></div></div>
+      <div class="footer-contact-item"><span>📞</span><div><p>Phone</p><a href="tel:+17273006697">+1 (727) 300-6697</a></div></div>
+      <div class="footer-contact-item"><span>✉️</span><div><p>Email</p><a href="mailto:hello@on3link.com">hello@on3link.com</a></div></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 On3 Link LLC. All rights reserved.</p>
+      <p style="font-size:11px;font-style:italic">International Trade & Strategic Sourcing</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open')}
+function closeMenu(){document.getElementById('mobileMenu').classList.remove('open')}
+
+function selectRadio(el,name){
+  document.querySelectorAll(`[onclick="selectRadio(this,'${name}')"]`).forEach(r=>r.classList.remove('selected'));
+  el.classList.add('selected');
+  updateStep();
+}
+function toggleCheck(el){
+  el.classList.toggle('selected');
+}
+function countChars(el,outId){
+  const max=outId==='descCount'?1000:500;
+  const len=el.value.length;
+  document.getElementById(outId).textContent=`${len} / ${max} characters`;
+  if(len>max)el.value=el.value.substring(0,max);
+}
+
+function updateStep(){
+  const s1=document.getElementById('fname').value&&document.getElementById('fcompany').value&&document.getElementById('femail').value&&document.getElementById('fcountry').value;
+  const s2=document.querySelector('.radio-option.selected[onclick*="service"]')&&document.getElementById('fdesc').value.length>10;
+  const indicators=['step1-indicator','step2-indicator','step3-indicator','step4-indicator'];
+  indicators.forEach((id,i)=>{
+    const el=document.getElementById(id);
+    el.classList.remove('active','done');
+    if(i===0&&s1){el.classList.add('done')}
+    else if(i===1&&s1&&s2){el.classList.add('done')}
+    else if(i===2&&s1&&s2){el.classList.add('active')}
+    else if(i===0&&!s1){el.classList.add('active')}
+    else if(i===1&&s1&&!s2){el.classList.add('active')}
+  });
+}
+
+function submitForm(){
+  const name=document.getElementById('fname').value.trim();
+  const company=document.getElementById('fcompany').value.trim();
+  const email=document.getElementById('femail').value.trim();
+  const country=document.getElementById('fcountry').value;
+  const desc=document.getElementById('fdesc').value.trim();
+  const service=document.querySelector('.radio-option.selected[onclick*="service"]');
+  if(!name||!company||!email||!country||!desc||!service){
+    alert('Please fill in all required fields (marked with *) before submitting.');
+    return;
+  }
+  const emailRe=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if(!emailRe.test(email)){alert('Please enter a valid email address.');return;}
+  const btn=document.getElementById('submitText');
+  btn.textContent='Submitting...';
+  setTimeout(()=>{
+    document.getElementById('formCard').querySelectorAll('.form-section,.form-submit').forEach(s=>s.style.display='none');
+    document.getElementById('successState').style.display='block';
+    ['step1-indicator','step2-indicator','step3-indicator','step4-indicator'].forEach(id=>{
+      const el=document.getElementById(id);
+      el.classList.remove('active');
+      el.classList.add('done');
+    });
+    window.scrollTo({top:document.getElementById('formCard').offsetTop-100,behavior:'smooth'});
+  },1200);
+}
+updateStep();
+</script>
+</body>
+</html>
