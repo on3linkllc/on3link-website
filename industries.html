@@ -3,148 +3,119 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Industries served by On3 Link LLC — construction, beauty and barber, consumer products, retail, private label brands, and manufacturing.">
 <title>Industries — On3 Link LLC</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
-  --navy:#0a0f1e;--navy2:#0d1428;--navy3:#111a35;
-  --gold:#b8922a;--gold2:#d4a843;--gold3:#e8c06a;
+  --navy:#0a0f1e;--navy2:#0d1428;
+  --gold:#b8922a;--gold2:#d4a843;
   --white:#ffffff;--gray1:#f0f0ed;--gray2:#c8c6bc;--gray3:#8a8880;
-  --text:#e8e6e0;
 }
 html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;background:var(--navy);color:var(--text);line-height:1.6;overflow-x:hidden}
+body{font-family:'Inter',sans-serif;background:var(--navy);color:var(--gray1);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img,svg{display:block;max-width:100%}
+a{-webkit-tap-highlight-color:transparent}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,15,30,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(184,146,42,0.15);padding:0 5%}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px;max-width:1400px;margin:0 auto}
-.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
-.logo svg{height:40px;width:auto}
-.logo-text{font-size:15px;font-weight:700;color:var(--white);letter-spacing:0.5px;line-height:1.2}
-.logo-text span{display:block;font-size:10px;font-weight:400;color:var(--gold2);letter-spacing:2px;text-transform:uppercase}
-.nav-links{display:flex;align-items:center;gap:8px}
-.nav-links a{color:var(--gray2);text-decoration:none;font-size:13px;font-weight:500;padding:6px 12px;border-radius:6px;transition:color 0.2s,background 0.2s}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,15,30,0.96);backdrop-filter:blur(14px);border-bottom:1px solid rgba(184,146,42,0.14)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px;max-width:1200px;margin:0 auto;padding:0 20px}
+.logo{display:flex;align-items:center;gap:11px;text-decoration:none;flex-shrink:0}
+.logo-mark{height:40px;width:auto}
+.logo-text{font-size:16px;font-weight:800;color:var(--white);letter-spacing:1px;line-height:1;white-space:nowrap}
+.logo-text em{font-style:normal;color:var(--gold2)}
+.nav-links{display:flex;align-items:center;gap:4px}
+.nav-links a{color:var(--gray2);text-decoration:none;font-size:13.5px;font-weight:500;padding:8px 13px;border-radius:7px;transition:color .2s,background .2s}
 .nav-links a:hover,.nav-links a.active{color:var(--white);background:rgba(255,255,255,0.06)}
-.nav-cta{background:var(--gold)!important;color:var(--navy)!important;font-weight:600!important;padding:8px 18px!important;border-radius:6px!important}
+.nav-cta{background:var(--gold)!important;color:var(--navy)!important;font-weight:700!important;margin-left:6px}
 .nav-cta:hover{background:var(--gold2)!important}
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
+.hamburger{display:none;width:48px;height:48px;flex-direction:column;gap:5px;justify-content:center;align-items:center;cursor:pointer;border:none;background:none}
 .hamburger span{display:block;width:22px;height:2px;background:var(--white);border-radius:2px}
-.nav-mobile{display:none;position:fixed;top:72px;left:0;right:0;background:rgba(10,15,30,0.98);padding:24px 5%;flex-direction:column;gap:8px;z-index:99;border-bottom:1px solid rgba(184,146,42,0.15)}
+.nav-mobile{display:none;position:fixed;top:68px;left:0;right:0;background:rgba(10,15,30,0.99);padding:12px 20px 24px;flex-direction:column;z-index:99;border-bottom:1px solid rgba(184,146,42,0.15)}
 .nav-mobile.open{display:flex}
-.nav-mobile a{color:var(--gray2);text-decoration:none;font-size:15px;font-weight:500;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.05)}
+.nav-mobile a{color:var(--gray1);text-decoration:none;font-size:16px;font-weight:500;padding:15px 4px;border-bottom:1px solid rgba(255,255,255,0.06);min-height:48px;display:flex;align-items:center}
+.nav-mobile a:last-child{border-bottom:none;color:var(--gold2);font-weight:700}
 
 /* PAGE HERO */
-.page-hero{padding:140px 5% 80px;background:var(--navy2);position:relative;overflow:hidden;border-bottom:1px solid rgba(184,146,42,0.1)}
-.page-hero-grid{position:absolute;inset:0;opacity:0.03;background-image:linear-gradient(rgba(184,146,42,0.8) 1px,transparent 1px),linear-gradient(90deg,rgba(184,146,42,0.8) 1px,transparent 1px);background-size:60px 60px}
-.page-hero-glow{position:absolute;top:0;left:30%;width:600px;height:350px;background:radial-gradient(ellipse,rgba(184,146,42,0.07) 0%,transparent 70%);pointer-events:none}
-.page-hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:2}
-.breadcrumb{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--gray3);margin-bottom:24px;letter-spacing:1px;text-transform:uppercase}
-.breadcrumb a{color:var(--gold);text-decoration:none}
-.page-hero h1{font-size:clamp(36px,5vw,64px);font-weight:800;color:var(--white);line-height:1.1;letter-spacing:-1.5px;margin-bottom:20px}
-.page-hero h1 em{font-style:normal;color:var(--gold2)}
-.page-hero p{font-size:18px;color:var(--gray2);max-width:640px;line-height:1.75}
-
-/* INDUSTRY TABS */
-.ind-tabs{background:rgba(184,146,42,0.05);border-bottom:1px solid rgba(184,146,42,0.12);padding:0 5%;position:sticky;top:72px;z-index:50}
-.ind-tabs-inner{max-width:1200px;margin:0 auto;display:flex;overflow-x:auto;scrollbar-width:none}
-.ind-tabs-inner::-webkit-scrollbar{display:none}
-.itab{padding:17px 18px;font-size:12px;font-weight:600;color:var(--gray3);text-decoration:none;white-space:nowrap;border-bottom:2px solid transparent;transition:all 0.2s;display:flex;align-items:center;gap:7px}
-.itab:hover{color:var(--white)}
-.itab.active{color:var(--gold2);border-bottom-color:var(--gold2)}
-.itab .iicon{font-size:15px}
+.page-hero{padding:130px 20px 70px;background:var(--navy2);position:relative;overflow:hidden;border-bottom:1px solid rgba(184,146,42,0.1);text-align:center}
+.ph-glow{position:absolute;inset:0;background:radial-gradient(ellipse 700px 350px at 50% 0%,rgba(184,146,42,0.08) 0%,transparent 65%)}
+.ph-inner{max-width:760px;margin:0 auto;position:relative;z-index:2}
+.label{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold2);margin-bottom:14px}
+h1{font-size:clamp(30px,6vw,54px);font-weight:800;color:var(--white);line-height:1.1;letter-spacing:-1.2px;margin-bottom:18px}
+h1 em{font-style:normal;color:var(--gold2)}
+.ph-inner p.lead{font-size:clamp(15px,2.2vw,18px);color:var(--gray2);line-height:1.75;max-width:620px;margin:0 auto}
 
 /* SECTIONS */
-section{padding:90px 5%}
-.section-inner{max-width:1200px;margin:0 auto}
-.alt-bg{background:var(--navy2)}
-.section-label{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold2);margin-bottom:14px}
-.section-title{font-size:clamp(26px,3.5vw,46px);font-weight:800;color:var(--white);line-height:1.1;letter-spacing:-0.8px;margin-bottom:18px}
-.section-sub{font-size:17px;color:var(--gray2);max-width:600px;line-height:1.75}
+section{padding:clamp(64px,9vw,100px) 20px;scroll-margin-top:80px}
+.inner{max-width:1100px;margin:0 auto}
+h2{font-size:clamp(24px,4vw,40px);font-weight:800;color:var(--white);line-height:1.12;letter-spacing:-0.7px;margin-bottom:16px}
+.sub{font-size:clamp(15px,2vw,17px);color:var(--gray2);max-width:560px;line-height:1.75}
+.alt{background:var(--navy2)}
+.center{text-align:center}
+.center .sub{margin-left:auto;margin-right:auto}
 
-/* OVERVIEW GRID */
-.overview-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:52px}
-.ov-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:14px;padding:28px;text-decoration:none;display:block;transition:all 0.2s}
-.ov-card:hover{border-color:rgba(184,146,42,0.4);background:rgba(184,146,42,0.06);transform:translateY(-2px)}
-.ov-icon{font-size:32px;margin-bottom:14px}
-.ov-card h3{font-size:15px;font-weight:700;color:var(--white);margin-bottom:7px}
-.ov-card p{font-size:13px;color:var(--gray3);line-height:1.6;margin-bottom:14px}
-.ov-link{font-size:12px;font-weight:600;color:var(--gold2)}
+/* INDUSTRY CARDS */
+.industries{display:flex;flex-wrap:wrap;justify-content:center;gap:18px;margin-top:52px}
+.ind{flex:1 1 300px;max-width:350px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:34px 28px;transition:border-color .2s,background .2s,transform .2s;scroll-margin-top:90px}
+.ind:hover{border-color:rgba(184,146,42,0.4);background:rgba(184,146,42,0.05);transform:translateY(-3px)}
+.ind-icon{font-size:32px;margin-bottom:16px}
+.ind h3{font-size:18px;font-weight:700;color:var(--white);margin-bottom:10px}
+.ind>p{font-size:14px;color:var(--gray2);line-height:1.75;margin-bottom:16px}
+.ind ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.ind li{font-size:13.5px;color:var(--gray3);display:flex;align-items:flex-start;gap:9px;line-height:1.5}
+.ind li::before{content:'→';color:var(--gold);font-size:12px;margin-top:2px;flex-shrink:0}
+.ind-badge{display:inline-block;background:rgba(184,146,42,0.12);border:1px solid rgba(184,146,42,0.25);color:var(--gold2);font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:5px 12px;border-radius:100px;margin-bottom:14px}
 
-/* INDUSTRY SECTIONS */
-.ind-section{padding:100px 5%;scroll-margin-top:130px}
-.ind-section:nth-child(even){background:var(--navy2)}
-.is-inner{max-width:1200px;margin:0 auto}
-.is-layout{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
-.is-layout.reverse{direction:rtl}
-.is-layout.reverse>*{direction:ltr}
-.is-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(184,146,42,0.1);border:1px solid rgba(184,146,42,0.2);color:var(--gold2);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:8px 18px;border-radius:100px;margin-bottom:20px}
-.is-icon-big{font-size:48px;margin-bottom:-10px}
-.is-content h2{font-size:clamp(24px,3vw,42px);font-weight:800;color:var(--white);line-height:1.15;letter-spacing:-0.8px;margin-bottom:20px}
-.is-content p{font-size:15px;color:var(--gray2);line-height:1.85;margin-bottom:16px}
-.is-content p strong{color:var(--white)}
-.is-highlight{background:rgba(184,146,42,0.07);border-left:3px solid var(--gold);border-radius:0 10px 10px 0;padding:18px 22px;font-size:14px;font-style:italic;color:var(--gray1);line-height:1.75;margin-top:22px}
-.is-includes{margin-top:26px}
-.is-includes h4{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold2);margin-bottom:12px}
-.is-includes ul{list-style:none;display:flex;flex-direction:column;gap:9px}
-.is-includes li{font-size:14px;color:var(--gray2);display:flex;align-items:flex-start;gap:10px;line-height:1.5}
-.is-includes li::before{content:'→';color:var(--gold);font-size:11px;margin-top:2px;flex-shrink:0}
-.is-aside{display:flex;flex-direction:column;gap:16px}
-.is-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:14px;padding:24px}
-.is-card.gold{background:rgba(184,146,42,0.07);border-color:rgba(184,146,42,0.2)}
-.is-card h4{font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold2);margin-bottom:12px}
-.is-card p{font-size:13px;color:var(--gray3);line-height:1.7}
-.is-card ul{list-style:none;display:flex;flex-direction:column;gap:8px}
-.is-card li{font-size:13px;color:var(--gray2);display:flex;align-items:flex-start;gap:8px;line-height:1.5}
-.is-card li::before{content:'◆';color:var(--gold);font-size:9px;margin-top:4px;flex-shrink:0}
-.country-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
-.country-chip{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:6px 12px;font-size:12px;color:var(--gray2);font-weight:500}
+/* MORE CHIPS */
+.chips{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:44px}
+.chip{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:100px;padding:12px 22px;font-size:13.5px;font-weight:600;color:var(--gray2);display:flex;align-items:center;gap:9px;transition:.2s}
+.chip:hover{border-color:rgba(184,146,42,0.3);color:var(--white)}
 
-/* CROSS-INDUSTRY STRIP */
-.cross-strip{padding:80px 5%;background:rgba(184,146,42,0.05);border-top:1px solid rgba(184,146,42,0.1);border-bottom:1px solid rgba(184,146,42,0.1)}
-.cross-inner{max-width:1200px;margin:0 auto}
-.cross-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-top:40px}
-.cross-chip{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:10px;padding:18px 14px;text-align:center;transition:all 0.2s}
-.cross-chip:hover{border-color:rgba(184,146,42,0.3);background:rgba(184,146,42,0.06)}
-.cross-chip .cc-icon{font-size:22px;margin-bottom:8px}
-.cross-chip p{font-size:12px;font-weight:600;color:var(--gray2)}
+/* QUOTE */
+.quote-band{padding:clamp(56px,8vw,84px) 20px;text-align:center;background:var(--navy2);border-top:1px solid rgba(184,146,42,0.1);border-bottom:1px solid rgba(184,146,42,0.1)}
+.quote-band blockquote{font-size:clamp(18px,3.2vw,26px);font-weight:600;color:var(--white);line-height:1.45;max-width:700px;margin:0 auto;letter-spacing:-0.3px}
+.quote-band blockquote em{font-style:normal;color:var(--gold2)}
+.quote-src{margin-top:18px;font-size:13px;color:var(--gray3);letter-spacing:2px;text-transform:uppercase}
 
 /* CTA */
-.cta-strip{background:var(--navy2);border-top:1px solid rgba(184,146,42,0.15);padding:80px 5%;text-align:center}
-.cta-inner{max-width:680px;margin:0 auto}
-.cta-strip h2{font-size:clamp(26px,4vw,44px);font-weight:800;color:var(--white);margin-bottom:16px;letter-spacing:-0.5px}
-.cta-strip p{font-size:17px;color:var(--gray2);margin-bottom:40px;line-height:1.7}
-.btn-primary{background:var(--gold);color:var(--navy);font-weight:700;font-size:15px;padding:14px 32px;border-radius:8px;text-decoration:none;display:inline-block;transition:background 0.2s,transform 0.15s}
+#cta{text-align:center}
+#cta .sub{margin:0 auto 38px}
+.btn-primary{background:var(--gold);color:var(--navy);font-weight:700;font-size:16px;padding:16px 34px;border-radius:9px;text-decoration:none;transition:.2s;min-height:48px;display:inline-flex;align-items:center}
 .btn-primary:hover{background:var(--gold2);transform:translateY(-1px)}
-.btn-secondary{background:transparent;color:var(--white);font-weight:600;font-size:15px;padding:14px 32px;border-radius:8px;text-decoration:none;border:1px solid rgba(255,255,255,0.2);display:inline-block;transition:all 0.2s}
-.btn-secondary:hover{border-color:rgba(255,255,255,0.5);background:rgba(255,255,255,0.05)}
+.btn-secondary{background:transparent;color:var(--white);font-weight:600;font-size:16px;padding:16px 34px;border-radius:9px;text-decoration:none;border:1px solid rgba(255,255,255,0.22);min-height:48px;display:inline-flex;align-items:center;transition:.2s}
+.btn-secondary:hover{border-color:rgba(255,255,255,0.55);background:rgba(255,255,255,0.05)}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.cta-note{margin-top:24px;font-size:13px;color:var(--gray3)}
 
 /* FOOTER */
-footer{background:#060b16;border-top:1px solid rgba(255,255,255,0.06);padding:48px 5% 28px}
-.footer-inner{max-width:1400px;margin:0 auto}
-.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
-.footer-brand p{font-size:13px;color:var(--gray3);line-height:1.7;margin-top:14px;max-width:280px}
-.footer-col h4{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold2);margin-bottom:14px}
-.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:8px}
-.footer-col li a{font-size:13px;color:var(--gray3);text-decoration:none;transition:color 0.2s}
-.footer-col li a:hover{color:var(--white)}
-.footer-contact{border-top:1px solid rgba(255,255,255,0.05);padding-top:28px;margin-bottom:24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
-.footer-contact-item{display:flex;align-items:flex-start;gap:10px}
-.footer-contact-item span{color:var(--gold2);font-size:15px;margin-top:2px}
-.footer-contact-item div p:first-child{font-size:11px;font-weight:700;color:var(--gold2);letter-spacing:1px;text-transform:uppercase;margin-bottom:3px}
-.footer-contact-item div a,.footer-contact-item div p{font-size:13px;color:var(--gray3);text-decoration:none}
-.footer-contact-item div a:hover{color:var(--white)}
-.footer-bottom{border-top:1px solid rgba(255,255,255,0.05);padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
-.footer-bottom p{font-size:12px;color:var(--gray3)}
+footer{background:#060b16;border-top:1px solid rgba(255,255,255,0.06);padding:56px 20px 30px}
+.f-inner{max-width:1100px;margin:0 auto}
+.f-top{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:36px;margin-bottom:44px}
+.f-brand p{font-size:13.5px;color:var(--gray3);line-height:1.7;margin-top:16px;max-width:270px}
+.f-col h4{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold2);margin-bottom:15px}
+.f-col ul{list-style:none;display:flex;flex-direction:column;gap:4px}
+.f-col li a{font-size:13.5px;color:var(--gray3);text-decoration:none;transition:color .2s;padding:5px 0;display:inline-block}
+.f-col li a:hover{color:var(--white)}
+.f-contact{border-top:1px solid rgba(255,255,255,0.05);padding-top:26px;margin-bottom:24px;display:flex;flex-wrap:wrap;gap:14px 40px;font-size:13.5px;color:var(--gray3)}
+.f-contact a{color:var(--gray3);text-decoration:none}
+.f-contact a:hover{color:var(--gold2)}
+.f-bottom{border-top:1px solid rgba(255,255,255,0.05);padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:12px;color:var(--gray3)}
 
-@media(max-width:900px){
-  .nav-links{display:none}.hamburger{display:flex}
-  .is-layout,.is-layout.reverse{grid-template-columns:1fr;direction:ltr}
-  .footer-top{grid-template-columns:1fr 1fr}
+/* MOBILE */
+@media(max-width:860px){
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .f-top{grid-template-columns:1fr 1fr}
 }
-@media(max-width:600px){
-  .overview-grid{grid-template-columns:1fr 1fr}
-  .footer-top{grid-template-columns:1fr}
+@media(max-width:560px){
+  .ind{max-width:100%;flex-basis:100%}
+  .f-top{grid-template-columns:1fr;gap:28px}
+  section{padding:60px 20px}
+  .cta-btns{flex-direction:column;align-items:stretch;max-width:340px;margin:0 auto}
+  .btn-primary,.btn-secondary{justify-content:center;width:100%}
+  .logo-mark{height:36px}
 }
 </style>
 </head>
@@ -153,17 +124,11 @@ footer{background:#060b16;border-top:1px solid rgba(255,255,255,0.06);padding:48
 <!-- NAV -->
 <nav>
   <div class="nav-inner">
-    <a href="index.html" class="logo">
-      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-label="On3 Link logo">
-        <ellipse cx="100" cy="72" rx="40" ry="55" fill="none" stroke="#b8922a" stroke-width="14"/>
-        <ellipse cx="100" cy="130" rx="40" ry="55" fill="none" stroke="#8a6a1a" stroke-width="14"/>
-        <rect x="86" y="45" width="18" height="110" fill="#0a0f1e"/>
-        <text x="100" y="118" text-anchor="middle" font-family="Inter,sans-serif" font-weight="800" font-size="36" fill="#b8922a">1</text>
-      </svg>
-      <div class="logo-text">ON3 LINK<span>LLC</span></div>
+    <a href="index.html" class="logo" aria-label="On3 Link home">
+      <img class="logo-mark" src="logo-mark.png" alt="" onerror="this.style.display='none'">
+      <div class="logo-text">ON<em>3</em> LINK</div>
     </a>
     <div class="nav-links">
-      <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="services.html">Services</a>
       <a href="countries.html">Countries</a>
@@ -171,553 +136,185 @@ footer{background:#060b16;border-top:1px solid rgba(255,255,255,0.06);padding:48
       <a href="industries.html" class="active">Industries</a>
       <a href="contact.html" class="nav-cta">Start Your Project</a>
     </div>
-    <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
 <div class="nav-mobile" id="mobileMenu">
-  <a href="index.html" onclick="closeMenu()">Home</a>
-  <a href="about.html" onclick="closeMenu()">About</a>
-  <a href="services.html" onclick="closeMenu()">Services</a>
-  <a href="countries.html" onclick="closeMenu()">Countries</a>
-  <a href="tradeshows.html" onclick="closeMenu()">Trade Shows</a>
-  <a href="industries.html" onclick="closeMenu()">Industries</a>
-  <a href="contact.html" onclick="closeMenu()" style="color:var(--gold2);font-weight:700">Start Your Project →</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="countries.html">Countries</a>
+  <a href="tradeshows.html">Trade Shows</a>
+  <a href="industries.html">Industries</a>
+  <a href="contact.html">Start Your Project →</a>
 </div>
 
 <!-- PAGE HERO -->
 <div class="page-hero">
-  <div class="page-hero-grid"></div>
-  <div class="page-hero-glow"></div>
-  <div class="page-hero-inner">
-    <div class="breadcrumb"><a href="index.html">Home</a><span>›</span><span>Industries</span></div>
-    <h1>We understand your industry.<br><em>Not just your product.</em></h1>
-    <p>International sourcing is not one-size-fits-all. Each industry has different quality standards, compliance requirements, supplier landscapes, and supply chain dynamics. On3 Link brings industry-specific knowledge to every project — so the solutions we build actually fit your business.</p>
+  <div class="ph-glow"></div>
+  <div class="ph-inner">
+    <p class="label">Industries We Serve</p>
+    <h1>We understand your industry,<br><em>not just your product.</em></h1>
+    <p class="lead">Every industry has its own standards, suppliers, and challenges. We bring industry-specific knowledge to every project — so the solutions we build truly fit your business.</p>
   </div>
 </div>
 
-<!-- STICKY TABS -->
-<div class="ind-tabs">
-  <div class="ind-tabs-inner">
-    <a href="#construction" class="itab active"><span class="iicon">🏗️</span>Construction</a>
-    <a href="#beauty" class="itab"><span class="iicon">✂️</span>Beauty & Barber</a>
-    <a href="#consumer" class="itab"><span class="iicon">📦</span>Consumer Products</a>
-    <a href="#retail" class="itab"><span class="iicon">🛒</span>Retail & Wholesale</a>
-    <a href="#privatelabel" class="itab"><span class="iicon">🏷️</span>Private Label</a>
-    <a href="#manufacturing" class="itab"><span class="iicon">🏭</span>Manufacturing</a>
-  </div>
-</div>
-
-<!-- OVERVIEW -->
+<!-- INDUSTRIES -->
 <section>
-  <div class="section-inner">
-    <p class="section-label">Industries We Serve</p>
-    <h2 class="section-title">Six industries. Deep expertise in each.</h2>
-    <p class="section-sub">We don't work with every industry — we work deeply with the ones where our supplier network, market knowledge, and trade expertise creates the most value.</p>
-    <div class="overview-grid">
-      <a href="#construction" class="ov-card">
-        <div class="ov-icon">🏗️</div>
+  <div class="inner center">
+    <p class="label">Core Industries</p>
+    <h2>Deep expertise where it matters most.</h2>
+    <p class="sub">We focus on the industries where our supplier network and market knowledge create the greatest value for our clients.</p>
+    <div class="industries">
+
+      <div class="ind" id="construction">
+        <div class="ind-icon">🏗️</div>
+        <div class="ind-badge">Direct Experience</div>
         <h3>Construction & Flooring</h3>
-        <p>Tile leveling systems, flooring accessories, building materials, and construction tools sourced from verified manufacturers across our four-country network.</p>
-        <div class="ov-link">Explore →</div>
-      </a>
-      <a href="#beauty" class="ov-card">
-        <div class="ov-icon">✂️</div>
+        <p>One of our most active categories — including direct import experience through our OBP USA division, which distributes tile leveling systems across the US.</p>
+        <ul>
+          <li>Tile leveling clips, wedges & spacers</li>
+          <li>Flooring tools & accessories</li>
+          <li>Building hardware & materials</li>
+          <li>Private label construction brands</li>
+        </ul>
+      </div>
+
+      <div class="ind" id="beauty">
+        <div class="ind-icon">✂️</div>
+        <div class="ind-badge">Direct Experience</div>
         <h3>Beauty & Professional Barber</h3>
-        <p>Professional barber chairs, salon equipment, clippers, trimmers, and accessories — sourced from Brazil and China with direct trade show relationships.</p>
-        <div class="ov-link">Explore →</div>
-      </a>
-      <a href="#consumer" class="ov-card">
-        <div class="ov-icon">📦</div>
+        <p>We operate in this industry ourselves through BarberMaxx USA — importing professional equipment from Brazil and China with supplier relationships built in person.</p>
+        <ul>
+          <li>Professional barber chairs (Brazil)</li>
+          <li>Clippers, trimmers & tools (China)</li>
+          <li>Salon furniture & equipment</li>
+          <li>Private label barber lines</li>
+        </ul>
+      </div>
+
+      <div class="ind" id="consumer">
+        <div class="ind-icon">📦</div>
         <h3>Consumer Products</h3>
-        <p>A broad category requiring broad supplier access. We source consumer goods across personal care, home, lifestyle, and accessories from our global network.</p>
-        <div class="ov-link">Explore →</div>
-      </a>
-      <a href="#retail" class="ov-card">
-        <div class="ov-icon">🛒</div>
+        <p>From personal care to home goods, we source consumer products with the consistent quality and competitive costs that healthy retail margins depend on.</p>
+        <ul>
+          <li>Personal care & grooming</li>
+          <li>Home & kitchen products</li>
+          <li>Lifestyle & outdoor goods</li>
+          <li>E-commerce & Amazon brands</li>
+        </ul>
+      </div>
+
+      <div class="ind" id="retail">
+        <div class="ind-icon">🛒</div>
         <h3>Retail & Wholesale</h3>
-        <p>Retail buyers and wholesale distributors need reliable suppliers, consistent quality, and competitive landed costs. We build the supply chains that make that possible.</p>
-        <div class="ov-link">Explore →</div>
-      </a>
-      <a href="#privatelabel" class="ov-card">
-        <div class="ov-icon">🏷️</div>
+        <p>Retail success depends on reliability. We build supply chains that deliver on time, every time — with consistent quality and clear landed costs.</p>
+        <ul>
+          <li>Supplier vetting for retail-grade quality</li>
+          <li>Landed cost & margin protection</li>
+          <li>Flexible MOQ negotiation</li>
+          <li>Multi-supplier category strategies</li>
+        </ul>
+      </div>
+
+      <div class="ind" id="privatelabel">
+        <div class="ind-icon">🏷️</div>
+        <div class="ind-badge">Direct Experience</div>
         <h3>Private Label Brands</h3>
-        <p>Growing brands building their own product lines need OEM access, packaging development, and quality control. We manage the full private label journey.</p>
-        <div class="ov-link">Explore →</div>
-      </a>
-      <a href="#manufacturing" class="ov-card">
-        <div class="ov-icon">🏭</div>
+        <p>We've built private label brands ourselves — BarberMaxx USA and OBP USA. Our advice comes from real experience, and we bring that same playbook to your brand.</p>
+        <ul>
+          <li>OEM & ODM factory matching</li>
+          <li>Branding & packaging development</li>
+          <li>Compliance & quality management</li>
+          <li>Full concept-to-shelf coordination</li>
+        </ul>
+      </div>
+
+      <div class="ind" id="manufacturing">
+        <div class="ind-icon">🏭</div>
         <h3>Manufacturing</h3>
-        <p>Manufacturers sourcing components, raw materials, or sub-assemblies internationally need verified suppliers and supply chain resilience. That's our specialty.</p>
-        <div class="ov-link">Explore →</div>
-      </a>
+        <p>US manufacturers strengthen their competitiveness by sourcing components and materials internationally — especially through Mexico nearshoring opportunities.</p>
+        <ul>
+          <li>Components & sub-assemblies</li>
+          <li>Raw materials & packaging</li>
+          <li>Mexico nearshoring solutions</li>
+          <li>Supply chain diversification</li>
+        </ul>
+      </div>
+
     </div>
   </div>
 </section>
 
-<!-- CONSTRUCTION -->
-<div class="ind-section alt-bg" id="construction">
-  <div class="is-inner">
-    <div class="is-layout">
-      <div class="is-content">
-        <div class="is-badge">🏗️ Construction & Flooring</div>
-        <div class="is-icon-big">🏗️</div>
-        <h2>Sourcing smarter for the construction industry.</h2>
-        <p>The construction and flooring industry is one of On3 Link's most active sourcing categories. From <strong>tile leveling clips and spacers</strong> to flooring accessories, building materials, and installation tools — we source products that contractors, distributors, and retailers need to run their businesses.</p>
-        <p>Our OBP USA division operates directly in this space, importing tile leveling systems and flooring accessories for distribution across the US market. This gives us firsthand knowledge of what construction product buyers need — quality consistency, reliable lead times, competitive pricing, and suppliers who understand export documentation.</p>
-        <p>For construction companies looking to diversify sourcing away from a single supplier or country, On3 Link provides access to verified manufacturers in China, Mexico, and Brazil — with the ability to coordinate multi-source supply chains that reduce dependency risk.</p>
-        <div class="is-highlight">"The construction industry doesn't tolerate product failure. Every supplier we recommend in this category has been vetted for quality consistency — because a failed tile leveling clip or a substandard floor accessory creates real problems on real job sites."</div>
-        <div class="is-includes">
-          <h4>Products We Source in This Industry</h4>
-          <ul>
-            <li>Tile leveling clips, wedges, and spacer systems</li>
-            <li>Flooring installation tools and accessories</li>
-            <li>Grout, adhesive, and surface preparation products</li>
-            <li>Building hardware and fasteners</li>
-            <li>Safety equipment and PPE</li>
-            <li>Construction tools and hand tools</li>
-          </ul>
-        </div>
-      </div>
-      <div class="is-aside">
-        <div class="is-card gold">
-          <h4>Our Construction Experience</h4>
-          <p>On3 Link's OBP USA division has direct import experience in tile leveling systems and flooring accessories — giving us a practical understanding of what construction product buyers actually need from their suppliers.</p>
-        </div>
-        <div class="is-card">
-          <h4>Services Most Used</h4>
-          <ul>
-            <li>International product sourcing</li>
-            <li>Supplier development and validation</li>
-            <li>Private label development</li>
-            <li>Import coordination</li>
-            <li>Supply chain diversification</li>
-          </ul>
-        </div>
-        <div class="is-card">
-          <h4>Sourcing Countries</h4>
-          <div class="country-chips">
-            <span class="country-chip">🇨🇳 China</span>
-            <span class="country-chip">🇲🇽 Mexico</span>
-            <span class="country-chip">🇧🇷 Brazil</span>
-            <span class="country-chip">🇺🇸 USA</span>
-          </div>
-        </div>
-        <div class="is-card">
-          <h4>Who We Work With</h4>
-          <ul>
-            <li>Flooring distributors and wholesalers</li>
-            <li>Construction product importers</li>
-            <li>Tile and flooring retailers</li>
-            <li>Private label construction brands</li>
-            <li>General contractors sourcing direct</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- BEAUTY & BARBER -->
-<div class="ind-section" id="beauty">
-  <div class="is-inner">
-    <div class="is-layout reverse">
-      <div class="is-content">
-        <div class="is-badge">✂️ Beauty & Professional Barber</div>
-        <div class="is-icon-big">✂️</div>
-        <h2>The industry we know from the inside out.</h2>
-        <p>The professional barber and beauty industry is one of On3 Link's deepest areas of expertise. Our BarberMaxx USA division imports and distributes professional barber equipment sourced directly from Brazil and China — giving us firsthand supplier relationships that most sourcing companies simply don't have in this category.</p>
-        <p>From <strong>professional barber chairs sourced from Brazilian manufacturers</strong> like APF Medical in Florianópolis, to clippers, trimmers, and accessories sourced directly through our Canton Fair relationships in China — we cover the full spectrum of professional barber equipment with supplier relationships built in person.</p>
-        <p>For beauty and barber industry businesses looking to build private label product lines, reduce reliance on expensive branded equipment, or simply find better-quality suppliers at more competitive prices, On3 Link brings something most sourcing companies can't: actual industry experience as an operator, not just an agent.</p>
-        <div class="is-highlight">"We don't just source for the barber industry — we operate in it. BarberMaxx USA gives us the kind of buyer perspective that makes our sourcing recommendations genuinely useful."</div>
-        <div class="is-includes">
-          <h4>Products We Source in This Industry</h4>
-          <ul>
-            <li>Professional barber chairs (Brazil — premium grade)</li>
-            <li>Shampoo bowls and salon furniture</li>
-            <li>Professional clippers and trimmers (China)</li>
-            <li>Clipper accessories, guards, and blades</li>
-            <li>Barber shop accessories and tools</li>
-            <li>Salon mirrors, stations, and equipment</li>
-            <li>Private label barber product lines</li>
-          </ul>
-        </div>
-      </div>
-      <div class="is-aside">
-        <div class="is-card gold">
-          <h4>BarberMaxx USA</h4>
-          <p>On3 Link's BarberMaxx USA division imports and distributes professional barber equipment sourced from Brazil and China — giving us insider supplier relationships and direct market experience in this category.</p>
-        </div>
-        <div class="is-card">
-          <h4>Key Trade Shows</h4>
-          <ul>
-            <li>CT Barber Expo — Northeast USA</li>
-            <li>International Beauty Show (IBS)</li>
-            <li>Canton Fair — China (clippers & tools)</li>
-            <li>Brazilian supplier factory visits</li>
-          </ul>
-        </div>
-        <div class="is-card">
-          <h4>Sourcing Countries</h4>
-          <div class="country-chips">
-            <span class="country-chip">🇧🇷 Brazil</span>
-            <span class="country-chip">🇨🇳 China</span>
-            <span class="country-chip">🇺🇸 USA</span>
-          </div>
-        </div>
-        <div class="is-card">
-          <h4>Who We Work With</h4>
-          <ul>
-            <li>Barber shop owners and chains</li>
-            <li>Beauty supply distributors</li>
-            <li>Salon equipment importers</li>
-            <li>Private label barber brands</li>
-            <li>Wholesale barber equipment suppliers</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- CONSUMER PRODUCTS -->
-<div class="ind-section alt-bg" id="consumer">
-  <div class="is-inner">
-    <div class="is-layout">
-      <div class="is-content">
-        <div class="is-badge">📦 Consumer Products</div>
-        <div class="is-icon-big">📦</div>
-        <h2>Consumer products demand consistent quality at competitive cost.</h2>
-        <p>The consumer products category is one of the broadest and most competitive in international trade. Buyers expect consistent quality, reliable supply, and pricing that allows for healthy retail margins. Suppliers who can't deliver on all three don't last long.</p>
-        <p>On3 Link sources consumer products across personal care, home goods, lifestyle accessories, outdoor products, and general merchandise — with a supply base concentrated in China's manufacturing heartland, supported by Brazilian and Mexican manufacturers where quality or proximity advantages exist.</p>
-        <p>For e-commerce brands and growing consumer product companies, we provide <strong>full OEM and private label development</strong> — from concept to branded, shelf-ready product — with the quality controls and production oversight required to protect your brand and satisfy your customers.</p>
-        <div class="is-highlight">"Consumer product buyers get burned when they optimize for price alone. We help our clients find the optimal balance — the supplier who delivers acceptable quality at the best possible cost, consistently."</div>
-        <div class="is-includes">
-          <h4>Products We Source in This Category</h4>
-          <ul>
-            <li>Personal care and grooming products</li>
-            <li>Home organization and storage products</li>
-            <li>Kitchen and household accessories</li>
-            <li>Outdoor and lifestyle products</li>
-            <li>Health and wellness accessories</li>
-            <li>Gift and promotional products</li>
-            <li>Electronic accessories and gadgets</li>
-          </ul>
-        </div>
-      </div>
-      <div class="is-aside">
-        <div class="is-card gold">
-          <h4>E-Commerce Brands</h4>
-          <p>E-commerce is one of our fastest-growing client segments. Amazon sellers, Shopify brands, and direct-to-consumer businesses use On3 Link to build private label supply chains that their competitors can't easily replicate.</p>
-        </div>
-        <div class="is-card">
-          <h4>Services Most Used</h4>
-          <ul>
-            <li>OEM & ODM manufacturing</li>
-            <li>Private label development</li>
-            <li>International product sourcing</li>
-            <li>Quality control coordination</li>
-            <li>Import support</li>
-          </ul>
-        </div>
-        <div class="is-card">
-          <h4>Sourcing Countries</h4>
-          <div class="country-chips">
-            <span class="country-chip">🇨🇳 China</span>
-            <span class="country-chip">🇧🇷 Brazil</span>
-            <span class="country-chip">🇲🇽 Mexico</span>
-          </div>
-        </div>
-        <div class="is-card">
-          <h4>Who We Work With</h4>
-          <ul>
-            <li>E-commerce and Amazon sellers</li>
-            <li>Consumer brand startups</li>
-            <li>Importers building product portfolios</li>
-            <li>Wholesale distributors</li>
-            <li>Retail chains sourcing private label</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- RETAIL & WHOLESALE -->
-<div class="ind-section" id="retail">
-  <div class="is-inner">
-    <div class="is-layout reverse">
-      <div class="is-content">
-        <div class="is-badge">🛒 Retail & Wholesale</div>
-        <div class="is-icon-big">🛒</div>
-        <h2>Retail success starts with the right supply chain.</h2>
-        <p>Retail buyers and wholesale distributors operate in one of the most demanding supply chain environments in business. Margins are thin, customer expectations are high, inventory timing is critical, and a supply chain failure can mean empty shelves — or worse, an over-committed inventory position with a supplier who can't deliver.</p>
-        <p>On3 Link works with retail and wholesale businesses to build sourcing strategies that prioritize <strong>reliability over lowest price</strong>. Because in retail, a missed delivery or a quality failure costs more than the savings from choosing the cheapest supplier.</p>
-        <p>We identify suppliers with proven export track records, consistent production capacity, and the quality management systems required to support a retail supply chain — then develop those supplier relationships so they perform over time, not just on the first order.</p>
-        <div class="is-highlight">"Retail buyers don't need the cheapest supplier. They need the most reliable one at a competitive price. That distinction shapes every sourcing recommendation we make in this category."</div>
-        <div class="is-includes">
-          <h4>What We Provide for Retail & Wholesale</h4>
-          <ul>
-            <li>Supplier identification and vetting for retail-grade quality</li>
-            <li>Landed cost analysis to protect retail margins</li>
-            <li>Minimum order quantity negotiation</li>
-            <li>Consistent production and delivery scheduling</li>
-            <li>Private label development for retail differentiation</li>
-            <li>Multi-supplier strategy for category resilience</li>
-          </ul>
-        </div>
-      </div>
-      <div class="is-aside">
-        <div class="is-card gold">
-          <h4>Retail Supply Chain Priorities</h4>
-          <ul>
-            <li>On-time delivery — every order, every time</li>
-            <li>Consistent quality — no surprises at inspection</li>
-            <li>Competitive landed cost — margin protection</li>
-            <li>Flexible MOQ — matching order cadence</li>
-            <li>Reliable communication — no chasing for updates</li>
-          </ul>
-        </div>
-        <div class="is-card">
-          <h4>Services Most Used</h4>
-          <ul>
-            <li>Strategic procurement</li>
-            <li>Supplier development</li>
-            <li>Private label development</li>
-            <li>Supply chain solutions</li>
-            <li>Import coordination</li>
-          </ul>
-        </div>
-        <div class="is-card">
-          <h4>Sourcing Countries</h4>
-          <div class="country-chips">
-            <span class="country-chip">🇨🇳 China</span>
-            <span class="country-chip">🇧🇷 Brazil</span>
-            <span class="country-chip">🇲🇽 Mexico</span>
-            <span class="country-chip">🇺🇸 USA</span>
-          </div>
-        </div>
-        <div class="is-card">
-          <h4>Who We Work With</h4>
-          <ul>
-            <li>Regional and national retail chains</li>
-            <li>Wholesale distributors and buying groups</li>
-            <li>Category buyers and procurement managers</li>
-            <li>Import-focused retail businesses</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- PRIVATE LABEL -->
-<div class="ind-section alt-bg" id="privatelabel">
-  <div class="is-inner">
-    <div class="is-layout">
-      <div class="is-content">
-        <div class="is-badge">🏷️ Private Label Brands</div>
-        <div class="is-icon-big">🏷️</div>
-        <h2>Your brand. Built on world-class manufacturing.</h2>
-        <p>Private label is one of the most powerful strategies available to growing businesses — and one of the most complex to execute correctly. The difference between a successful private label product and a failed one almost always comes down to supplier selection, quality control, and the ability to iterate quickly on product development.</p>
-        <p>On3 Link has built private label supply chains across multiple categories — including professional barber equipment under the BarberMaxx USA brand, and flooring accessories under OBP USA. <strong>We don't just advise on private label — we do it ourselves.</strong> That experience informs every private label project we take on for clients.</p>
-        <p>From identifying the right OEM or ODM manufacturer, to developing branding and packaging, to managing compliance requirements and quality sign-off — On3 Link manages the full private label journey so you can focus on selling, not sourcing.</p>
-        <div class="is-highlight">"The private label brands that succeed are the ones that invest in the supplier relationship — not just the product design. We build both."</div>
-        <div class="is-includes">
-          <h4>Our Private Label Process</h4>
-          <ul>
-            <li>Product category research and opportunity assessment</li>
-            <li>OEM vs. ODM strategy recommendation</li>
-            <li>Factory identification and capability matching</li>
-            <li>Branding, packaging, and label development coordination</li>
-            <li>Compliance review (FDA, FCC, CE as applicable)</li>
-            <li>Sample development and revision management</li>
-            <li>Production oversight and pre-shipment inspection</li>
-            <li>Import coordination and landed cost analysis</li>
-          </ul>
-        </div>
-      </div>
-      <div class="is-aside">
-        <div class="is-card gold">
-          <h4>Our Own Private Label Experience</h4>
-          <ul>
-            <li>BarberMaxx USA — Professional barber equipment (Brazil & China)</li>
-            <li>OBP USA — Tile leveling and flooring accessories (China)</li>
-          </ul>
-          <p style="margin-top:12px">We've done this ourselves. That means our advice comes from real experience, not theory.</p>
-        </div>
-        <div class="is-card">
-          <h4>Services Most Used</h4>
-          <ul>
-            <li>OEM & ODM manufacturing</li>
-            <li>Private label development</li>
-            <li>Supplier development</li>
-            <li>Quality control</li>
-            <li>Import coordination</li>
-          </ul>
-        </div>
-        <div class="is-card">
-          <h4>Sourcing Countries</h4>
-          <div class="country-chips">
-            <span class="country-chip">🇨🇳 China</span>
-            <span class="country-chip">🇧🇷 Brazil</span>
-            <span class="country-chip">🇲🇽 Mexico</span>
-          </div>
-        </div>
-        <div class="is-card">
-          <h4>Who We Work With</h4>
-          <ul>
-            <li>E-commerce brands building product lines</li>
-            <li>Distributors adding private label to their portfolio</li>
-            <li>Entrepreneurs launching branded products</li>
-            <li>Retail chains developing house brands</li>
-            <li>Industry professionals expanding into product sales</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- MANUFACTURING -->
-<div class="ind-section" id="manufacturing">
-  <div class="is-inner">
-    <div class="is-layout reverse">
-      <div class="is-content">
-        <div class="is-badge">🏭 Manufacturing</div>
-        <div class="is-icon-big">🏭</div>
-        <h2>Manufacturers need better supply chains too.</h2>
-        <p>It's easy to think of international sourcing as something retailers and importers do. But manufacturers are among the most active users of international supply chains — sourcing components, raw materials, sub-assemblies, and packaging from overseas suppliers to reduce production costs and maintain competitive pricing.</p>
-        <p>For US manufacturers, the combination of rising domestic input costs and increasing global competition makes international sourcing not just an option — but a strategic necessity. <strong>The question is not whether to source internationally, but how to do it in a way that doesn't introduce unacceptable quality or supply chain risk.</strong></p>
-        <p>On3 Link works with manufacturing businesses to identify and develop reliable overseas component and material suppliers — with a particular focus on Mexico's nearshoring opportunity, which allows US manufacturers to access lower-cost production with dramatically reduced supply chain complexity compared to Asia.</p>
-        <div class="is-highlight">"Manufacturing businesses need supply chains as reliable as their own production lines. We build supplier relationships that can handle production schedules — not just one-off orders."</div>
-        <div class="is-includes">
-          <h4>What We Source for Manufacturers</h4>
-          <ul>
-            <li>Components and sub-assemblies</li>
-            <li>Raw materials and inputs</li>
-            <li>Packaging and labeling materials</li>
-            <li>Tooling and molds for OEM production</li>
-            <li>Industrial equipment and machinery</li>
-            <li>Contract manufacturing and assembly</li>
-          </ul>
-        </div>
-      </div>
-      <div class="is-aside">
-        <div class="is-card gold">
-          <h4>Mexico Nearshoring for Manufacturers</h4>
-          <p>For US manufacturers, Mexico represents a compelling nearshoring opportunity — lower labor costs, USMCA trade benefits, and 2–5 day transit times instead of 30+ days from Asia. On3 Link has active supplier relationships in Mexico's key manufacturing corridors.</p>
-        </div>
-        <div class="is-card">
-          <h4>Services Most Used</h4>
-          <ul>
-            <li>Supply chain solutions and diversification</li>
-            <li>Supplier development</li>
-            <li>Strategic procurement</li>
-            <li>OEM & ODM manufacturing</li>
-            <li>Import & export coordination</li>
-          </ul>
-        </div>
-        <div class="is-card">
-          <h4>Sourcing Countries</h4>
-          <div class="country-chips">
-            <span class="country-chip">🇲🇽 Mexico</span>
-            <span class="country-chip">🇨🇳 China</span>
-            <span class="country-chip">🇧🇷 Brazil</span>
-            <span class="country-chip">🇺🇸 USA</span>
-          </div>
-        </div>
-        <div class="is-card">
-          <h4>Who We Work With</h4>
-          <ul>
-            <li>US manufacturers sourcing components</li>
-            <li>Contract manufacturers expanding supply base</li>
-            <li>Industrial businesses reducing input costs</li>
-            <li>Companies nearshoring to Mexico</li>
-            <li>Businesses diversifying away from China</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
 <!-- MORE INDUSTRIES -->
-<div class="cross-strip">
-  <div class="cross-inner">
-    <p class="section-label">Also Active In</p>
-    <h2 class="section-title" style="font-size:clamp(22px,2.5vw,36px)">Additional industries where On3 Link sources and operates.</h2>
-    <div class="cross-grid">
-      <div class="cross-chip"><div class="cc-icon">🚗</div><p>Automotive Accessories</p></div>
-      <div class="cross-chip"><div class="cc-icon">🏠</div><p>Home Improvement</p></div>
-      <div class="cross-chip"><div class="cc-icon">💻</div><p>E-Commerce Brands</p></div>
-      <div class="cross-chip"><div class="cc-icon">⚙️</div><p>Industrial Products</p></div>
-      <div class="cross-chip"><div class="cc-icon">🌱</div><p>Growing Brands</p></div>
-      <div class="cross-chip"><div class="cc-icon">🎁</div><p>Gifts & Promotions</p></div>
-      <div class="cross-chip"><div class="cc-icon">🧴</div><p>Personal Care</p></div>
-      <div class="cross-chip"><div class="cc-icon">⚡</div><p>Electronics & Accessories</p></div>
-      <div class="cross-chip"><div class="cc-icon">🌎</div><p>International Expansion</p></div>
+<section class="alt">
+  <div class="inner center">
+    <p class="label">Also Active In</p>
+    <h2>Growing with businesses across many markets.</h2>
+    <div class="chips">
+      <div class="chip">🚗 Automotive Accessories</div>
+      <div class="chip">🏠 Home Improvement</div>
+      <div class="chip">💻 E-Commerce Brands</div>
+      <div class="chip">⚙️ Industrial Products</div>
+      <div class="chip">🧴 Personal Care</div>
+      <div class="chip">⚡ Electronics & Accessories</div>
+      <div class="chip">🎁 Gifts & Promotions</div>
+      <div class="chip">🌎 International Expansion</div>
     </div>
   </div>
+</section>
+
+<!-- QUOTE -->
+<div class="quote-band" style="background:var(--navy)">
+  <blockquote>"We don't just advise on sourcing — <em>we do it ourselves.</em> Our own brands are built on the same supplier network we open to our clients."</blockquote>
+  <p class="quote-src">The On3 Link Advantage</p>
 </div>
 
 <!-- CTA -->
-<div class="cta-strip">
-  <div class="cta-inner">
-    <p class="section-label" style="text-align:center">Get Started</p>
-    <h2>Don't see your industry listed?</h2>
-    <p>Tell us about your business and your sourcing needs. If we can help — in any industry — we'll tell you honestly. If we're not the right fit, we'll tell you that too.</p>
-    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+<section id="cta" class="alt">
+  <div class="inner center">
+    <p class="label">Get Started</p>
+    <h2>Your industry. Our network.</h2>
+    <p class="sub">Whatever you're sourcing, let's talk. We'll tell you honestly how we can help — and connect you with the right suppliers for your market.</p>
+    <div class="cta-btns">
       <a href="contact.html" class="btn-primary">Start Your Project</a>
-      <a href="services.html" class="btn-secondary">Explore Our Services</a>
+      <a href="services.html" class="btn-secondary">Explore Services</a>
     </div>
+    <p class="cta-note">Free consultation · Response within 24 hours · Full confidentiality</p>
   </div>
-</div>
+</section>
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-inner">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <div style="display:flex;align-items:center;gap:10px">
-          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="height:32px;width:auto"><ellipse cx="100" cy="72" rx="40" ry="55" fill="none" stroke="#b8922a" stroke-width="14"/><ellipse cx="100" cy="130" rx="40" ry="55" fill="none" stroke="#8a6a1a" stroke-width="14"/><rect x="86" y="45" width="18" height="110" fill="#060b16"/><text x="100" y="118" text-anchor="middle" font-family="Inter,sans-serif" font-weight="800" font-size="36" fill="#b8922a">1</text></svg>
-          <div style="font-size:14px;font-weight:700;color:var(--white)">ON3 LINK <span style="font-size:10px;font-weight:400;color:var(--gold2)">LLC</span></div>
-        </div>
-        <p>Your strategic partner in international trade. Building supplier relationships, reducing risk, and creating long-term business opportunities across the USA, Brazil, China, and Mexico.</p>
+  <div class="f-inner">
+    <div class="f-top">
+      <div class="f-brand">
+        <a href="index.html" class="logo" aria-label="On3 Link home">
+          <img class="logo-mark" style="height:30px" src="logo-mark.png" alt="" onerror="this.style.display='none'">
+          <div class="logo-text" style="font-size:14px">ON<em>3</em> LINK</div>
+        </a>
+        <p>Strategic sourcing and international trade solutions connecting businesses across the USA, Brazil, China, and Mexico.</p>
       </div>
-      <div class="footer-col"><h4>Industries</h4><ul><li><a href="#construction">Construction & Flooring</a></li><li><a href="#beauty">Beauty & Barber</a></li><li><a href="#consumer">Consumer Products</a></li><li><a href="#retail">Retail & Wholesale</a></li><li><a href="#privatelabel">Private Label</a></li><li><a href="#manufacturing">Manufacturing</a></li></ul></div>
-      <div class="footer-col"><h4>Services</h4><ul><li><a href="services.html#sourcing">International Sourcing</a></li><li><a href="services.html#supplier">Supplier Development</a></li><li><a href="services.html#oem">OEM & ODM</a></li><li><a href="services.html#privatelabel">Private Label</a></li><li><a href="services.html#supplychain">Supply Chain</a></li></ul></div>
-      <div class="footer-col"><h4>Countries</h4><ul><li><a href="countries.html#usa">United States</a></li><li><a href="countries.html#brazil">Brazil</a></li><li><a href="countries.html#china">China</a></li><li><a href="countries.html#mexico">Mexico</a></li></ul></div>
-      <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About On3</a></li><li><a href="tradeshows.html">Trade Shows</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="f-col"><h4>Company</h4><ul><li><a href="about.html">About On3</a></li><li><a href="services.html">Services</a></li><li><a href="industries.html">Industries</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="f-col"><h4>Network</h4><ul><li><a href="countries.html#usa">United States</a></li><li><a href="countries.html#brazil">Brazil</a></li><li><a href="countries.html#china">China</a></li><li><a href="countries.html#mexico">Mexico</a></li></ul></div>
+      <div class="f-col"><h4>Trade Shows</h4><ul><li><a href="tradeshows.html#canton">Canton Fair</a></li><li><a href="tradeshows.html#globalsources">Global Sources</a></li><li><a href="tradeshows.html#factory">Factory Visits</a></li></ul></div>
     </div>
-    <div class="footer-contact">
-      <div class="footer-contact-item"><span>📍</span><div><p>Address</p><p>12581 Metro Pkwy, Suite 9<br>Fort Myers, FL 33966, USA</p></div></div>
-      <div class="footer-contact-item"><span>📞</span><div><p>Phone</p><a href="tel:+17273006697">+1 (727) 300-6697</a></div></div>
-      <div class="footer-contact-item"><span>✉️</span><div><p>Email</p><a href="mailto:hello@on3link.com">hello@on3link.com</a></div></div>
+    <div class="f-contact">
+      <span>📍 12581 Metro Pkwy, Suite 9, Fort Myers, FL 33966</span>
+      <span>📞 <a href="tel:+17273006697">+1 (727) 300-6697</a></span>
+      <span>✉️ <a href="mailto:hello@on3link.com">hello@on3link.com</a></span>
     </div>
-    <div class="footer-bottom">
-      <p>© 2025 On3 Link LLC. All rights reserved.</p>
-      <p style="font-size:11px;font-style:italic">International Trade & Strategic Sourcing</p>
+    <div class="f-bottom">
+      <p>© 2026 On3 Link LLC. All rights reserved.</p>
+      <p>International Trade & Strategic Sourcing</p>
     </div>
   </div>
 </footer>
 
 <script>
 function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open')}
-function closeMenu(){document.getElementById('mobileMenu').classList.remove('open')}
-const iids=['construction','beauty','consumer','retail','privatelabel','manufacturing'];
-const itabs=document.querySelectorAll('.itab');
-window.addEventListener('scroll',()=>{
-  let cur='';
-  iids.forEach(id=>{
-    const el=document.getElementById(id);
-    if(el&&window.scrollY>=el.offsetTop-160)cur=id;
-  });
-  itabs.forEach(t=>{
-    t.classList.remove('active');
-    const href=t.getAttribute('href').replace('#','');
-    if(href===cur)t.classList.add('active');
-  });
-});
+document.querySelectorAll('.nav-mobile a').forEach(a=>a.addEventListener('click',()=>document.getElementById('mobileMenu').classList.remove('open')));
 </script>
 </body>
 </html>
